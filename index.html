@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>the time of our lifes</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="clock">
+		<iframe src="https://open.spotify.com/embed/playlist/6HGY2wPd65cFaMBUyjhOeJ" width="330" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+		<h2>HAPPY BIRTHDAY HONEY</h2>
+		<div id="time">
+			<div><span id="hour">00</span><span>Hours</span></div>
+			<div><span id="minute">00</span><span>Minutes</span></div>
+			<div><span id="second">00</span><span>Seconds</span></div>
+		</div>
+		<div><span id="tht">Hello mbul 🍡</span></div>
+		<div><span id="tht2">love you lots</span></div>
+	</div>
+	<script type="text/javascript">
+		function clock(){
+			var hours = document.getElementById('hour');
+			var minutes = document.getElementById('minute');
+			var seconds = document.getElementById('second');
+			var thts = document.getElementById('tht');
+
+			var h = new Date().getHours();
+			var m = new Date().getMinutes();
+			var s = new Date().getSeconds();
+			var am ="Good Morning moci mbul";
+
+			if(h >= 12 && h < 18){
+				var am = "Good Afternoon mbul 🍡"
+			} else if (h >= 18 && h < 21){
+				var am = "Good Evening mbul 🍡"
+			} else if (h >= 21 && h < 24) {
+				var am = "Good Night mbul 🍡"
+			}else {
+				var am = "Good Morning mbul🍡"
+			}
+
+			h = (h < 10) ? "0" + h : h
+			m = (m < 10) ? "0" + m : m
+			s = (s < 10) ? "0" + s : s
+
+			hours.innerHTML = h;
+			minutes.innerHTML = m;
+			seconds.innerHTML = s;
+			thts.innerHTML = am;
+		}
+
+		var interval = setInterval(clock, 1000)
+	</script>
+</body>
+</html>
